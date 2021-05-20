@@ -1,0 +1,16 @@
+name: ${project.artifactId}
+version: ${project.version}
+author: LightMute
+main: ${project.groupId}.${project.artifactId}.App
+api-version: 1.16
+commands:
+  DonatorsWorldEdit:
+    description: DonatorsWorldEdit
+permissions:
+  LimitedWorldEdit.*:
+    description: Gives access to all LimitedWorldEdit commands
+    children:
+      LimitedWorldEdit.bypass: true
+  LimitedWorldEdit.bypass:
+    description: Allows player to bypass LimitedWorldEdit
+    default: op
