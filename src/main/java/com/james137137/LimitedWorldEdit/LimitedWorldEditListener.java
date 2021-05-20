@@ -19,7 +19,7 @@ public class LimitedWorldEditListener implements Listener {
   public LimitedWorldEditListener(App aThis) {
   }
   
-  @Subscribe(priority = EventHandler.Priority.VERY_EARLY)
+  @Subscribe(priority = EventHandler.Priority.NORMAL)
   public void onEditSession(EditSessionEvent event) {
     if (event.getActor() == null || !event.getActor().isPlayer())
       return; 
