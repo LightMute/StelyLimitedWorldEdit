@@ -19,8 +19,10 @@ public class LimitedWorldEditListener implements Listener {
   public LimitedWorldEditListener(App aThis) {
   }
   
-  @Subscribe(priority = EventHandler.Priority.NORMAL)
+  @SuppressWarnings("deprecation")
+@Subscribe(priority = EventHandler.Priority.VERY_EARLY)
   public void onEditSession(EditSessionEvent event) {
+	  Bukkit.broadcastMessage("il prend bien l'event");
     if (event.getActor() == null || !event.getActor().isPlayer())
       return; 
     Player player = Bukkit.getPlayer(event.getActor().getName());
