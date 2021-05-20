@@ -25,7 +25,7 @@ public class LimitedWorldEditListener implements Listener {
 	  Bukkit.broadcastMessage("il prend bien l'event");
     if (event.getActor() == null || !event.getActor().isPlayer())
       return; 
-    Player player = Bukkit.getPlayer(event.getActor().getName().toLowerCase());
+    Player player = Bukkit.getPlayer(event.getActor().getName());
     if (this.checkByPass && player != null && player.hasPermission("LimitedWorldEdit.bypass"))
       return; 
     checkLimit(player);
