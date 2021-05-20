@@ -35,7 +35,7 @@ public class LimitedWorldEditListener implements Listener {
   
   private void checkLimit(Player player) {
     try {
-      WorldEdit.getInstance().getSessionManager().findByName(player.getName()).setBlockChangeLimit(100);
+      WorldEdit.getInstance().getSessionManager().findByName(player.getName().toLowerCase()).setBlockChangeLimit(100);
     } catch (Exception exception) {}
   }
 }
