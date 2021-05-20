@@ -1,6 +1,7 @@
 name: ${project.artifactId}
 version: ${project.version}
-author: LightMute
+softdepend: [WorldEdit,WorldGuard]
+author: [LightMute,James Anderson]
 main: ${project.groupId}.${project.artifactId}.App
 api-version: 1.16
 commands:
