@@ -11,10 +11,13 @@ import com.sk89q.worldguard.protection.regions.RegionContainer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class WorldGaurdAPI implements API {
 
+	@SuppressWarnings("deprecation")
 	public List<RegionWrapper> getRegions(Player player) {
 		List<RegionWrapper> output = new ArrayList<RegionWrapper>();
 		RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
@@ -22,6 +25,7 @@ public class WorldGaurdAPI implements API {
 		Collection<ProtectedRegion> values = mgr.getRegions().values();
 		for (ProtectedRegion value : values) {
 			if (value.getOwners().contains(player.getName().toLowerCase())) {
+				Bukkit.broadcastMessage("velue" + value);
 				BlockVector3 minimumPoint = value.getMinimumPoint();
 				BlockVector3 maximumPoint = value.getMaximumPoint();
 				RegionWrapper regionWrapper = new RegionWrapper(minimumPoint.getBlockX(), maximumPoint.getBlockX(), minimumPoint.getBlockY(), maximumPoint.getBlockY(), minimumPoint.getBlockZ(), maximumPoint.getBlockZ());
