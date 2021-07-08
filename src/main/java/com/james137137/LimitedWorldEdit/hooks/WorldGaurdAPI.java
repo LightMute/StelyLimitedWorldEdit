@@ -22,7 +22,7 @@ public class WorldGaurdAPI implements API {
 		RegionManager mgr = container.get(BukkitAdapter.adapt(player.getWorld()));
 		Collection<ProtectedRegion> values = mgr.getRegions().values();
 		for (ProtectedRegion value : values) {
-			if (value.getOwners().contains(player.getName().toLowerCase())) {
+			if (value.getOwners().contains(player.getName())) {
 				BlockVector3 minimumPoint = value.getMinimumPoint();
 				BlockVector3 maximumPoint = value.getMaximumPoint();
 				RegionWrapper regionWrapper = new RegionWrapper(minimumPoint.getBlockX(), maximumPoint.getBlockX(), minimumPoint.getBlockY(), maximumPoint.getBlockY(), minimumPoint.getBlockZ(), maximumPoint.getBlockZ());
